@@ -1,0 +1,49 @@
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+#input-el{
+    width: 100%;
+    border: 0;
+    outline: 1px solid #5f9341;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 2em;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+#input-el:focus{
+    background-color: aliceblue;
+
+}
+
+button{
+    background-color: #5f9341;
+    color: #fff;
+    border: 0;
+    outline: 1px solid #000;
+    border-radius: 2px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-weight: 900;
+}
+
+@media screen and (min-width:699px) {
+    .container {
+            width: 85%;
+            width: 750px;
+            margin: 0 auto;
+        }
+}
