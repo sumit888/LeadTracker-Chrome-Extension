@@ -20,7 +20,9 @@
 
 const userInput= document.getElementById("input-el")
 const saveButton = document.getElementById("save-btn")
+const tabBtn =  document.getElementById("tab-btn")
 const deleteButton = document.getElementById("delete-btn")
+
 let leads = document.getElementById("leads")
 let myLeads = []
 let oldLeads = []
@@ -30,6 +32,23 @@ const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 
 // 1. Check if leadsFromLocalStorage is truthy
 // 2. If so, set myLeads to its value and call renderLeads()
+
+// const tabs = [
+//     {url: "https://www.linkedin.com/in/sumit-thapa123/"}
+// ]
+
+tabBtn.addEventListener("click", function(){
+     // Grab the URL of the current tab!
+    // Save the url instead of logging it out
+    // console.log(tabs[0].url)
+
+     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+        render(myLeads)
+    })
+
+})
 
 if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
