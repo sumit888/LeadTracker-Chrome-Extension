@@ -7,16 +7,37 @@
     margin: 0;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
+::root{
+    --head-font: Georgia;
 }
 
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 400px;
+    
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    background-color: #5f9341;
+    color: #fff;
+    margin: 0;
+    padding-block: 0.4em;
+    font-weight: bolder;
+    text-shadow: 4px 2px 0px black;
+    font-family: var(--head-font);
+}
+
+main{
+    padding: 10px;
+}
 
 
 #input-el{
     width: 100%;
     border: 0;
-    outline: 1px solid #5f9341;
+    outline: 2px solid #5f9341;
     border-radius: 2px;
     padding: 10px;
     font-size: 2em;
@@ -36,14 +57,33 @@ button{
     outline: 1px solid #000;
     border-radius: 2px;
     padding: 10px 15px;
-    margin-top: 20px;
+    margin-block: 20px;
     font-weight: 900;
 }
 
-@media screen and (min-width:699px) {
-    .container {
-            width: 85%;
-            width: 750px;
-            margin: 0 auto;
-        }
+#delete-btn{
+    background-color: #fff;
+    color: #5f9341;
 }
+
+ul{
+    margin-top: 10px;
+    list-style: none;    
+}
+
+li{
+    list-style: none;
+    padding: 10px 30px;
+    background-image: url("icon.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+    margin-top: 5px;
+    font-size: 1.5em;
+}
+
+a{
+    
+    color: #5f9341
+}
+
