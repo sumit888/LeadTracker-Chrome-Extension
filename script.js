@@ -1,3 +1,27 @@
+//CONFIGURATION-----------------
+
+//Step 1 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"; //firebase Import Code
+import { getDatbase } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js"; //Step 5 
+
+//Step 2
+const firebaseConfig = { //configuration details for required feature i.e. realtime database
+    databaseURL: process.env.DATABASE_URL //STEp 4 "https://chrome-lead-tracker-extension-default-rtdb.asia-southeast1.firebasedatabase.app/" 
+                // STEP-7 Replacing actula URL with process.env.DATABASE_URL
+}
+
+// console.log(firebaseConfig.databaseURL)
+
+
+//Step 3
+
+const app = initializeApp(firebaseConfig); // It is using intializeApp function and taking firebaseConfig object to initialize app
+const database = getDatbase(app) //STEP 6
+
+//ACTUAL CODE---------------
+
+
+
 // 1) grab the save button and add a event listener to it
 
 // 2) Create two variables:
@@ -20,15 +44,15 @@
 
 const userInput= document.getElementById("input-el")
 const saveButton = document.getElementById("save-btn")
-const tabBtn =  document.getElementById("tab-btn")
+const tabBtn =  document.getElementById("tab-btn") //delete this after setting up firebase realtime database and it's function
 const deleteButton = document.getElementById("delete-btn")
 
 let leads = document.getElementById("leads")
-let myLeads = []
+let myLeads = [] //delete this as well since all the data will be stored in firebase realtime database
 let oldLeads = []
 const leadList = document.getElementById("lead-list")
 
-const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") ) //Also delete localStorage codes after the realtime database setup
 
 // 1. Check if leadsFromLocalStorage is truthy
 // 2. If so, set myLeads to its value and call renderLeads()
